@@ -1,0 +1,20 @@
+name: Image freshness check
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  freshness-check:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Call image check action
+      id: image-check
+      uses: richlander/container-base-image-check-action@main
+      with:
+        image: ghcr.io/richlander/lucy:main
+        base-image: mcr.microsoft.com/dotnet/runtime:7.0
+    - name: print result
+      run: echo " ${{ image-check.outputs.state}}
