@@ -19,5 +19,5 @@ jobs:
     - name: print result
       run: | 
         echo "test"
-        echo ${{steps.check.outputs.state}}
+        echo "${{steps.check.outputs.state}}"
         echo "test 2"
