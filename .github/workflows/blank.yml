@@ -18,6 +18,4 @@ jobs:
         base-image: mcr.microsoft.com/dotnet/runtime:7.0
     - name: print result
       run: | 
-        echo "test"
         echo "${{steps.check.outputs.state}}"
-        echo "test 2"
